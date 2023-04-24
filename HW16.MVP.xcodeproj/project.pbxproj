@@ -14,6 +14,7 @@
 		8493332329F6F341009C3FF6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8493332229F6F341009C3FF6 /* SnapKit */; };
 		8493332829F6F69A009C3FF6 /* Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493332729F6F69A009C3FF6 /* Animals.swift */; };
 		8493332A29F6F6B1009C3FF6 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493332929F6F6B1009C3FF6 /* MainPresenter.swift */; };
+		8493332C29F7008C009C3FF6 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493332B29F7008C009C3FF6 /* Animal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		8493331729F6EF34009C3FF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8493332729F6F69A009C3FF6 /* Animals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animals.swift; sourceTree = "<group>"; };
 		8493332929F6F6B1009C3FF6 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		8493332B29F7008C009C3FF6 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				8493332729F6F69A009C3FF6 /* Animals.swift */,
+				8493332B29F7008C009C3FF6 /* Animal.swift */,
 			);
 			path = MainModel;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				8493332829F6F69A009C3FF6 /* Animals.swift in Sources */,
 				8493330A29F6EF33009C3FF6 /* AppDelegate.swift in Sources */,
 				8493330C29F6EF33009C3FF6 /* SceneDelegate.swift in Sources */,
+				8493332C29F7008C009C3FF6 /* Animal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

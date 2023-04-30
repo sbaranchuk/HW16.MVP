@@ -6,3 +6,21 @@
 //
 
 import Foundation
+
+protocol MainViewProtocol: AnyObject {
+}
+
+protocol MainPresenterProtocol: AnyObject {
+    init(view: MainViewProtocol, model: Animals)
+}
+
+class MainPresenter: MainPresenterProtocol {
+
+    let view: MainViewProtocol
+    let model: Animals
+
+    required init(view: MainViewProtocol, model: Animals) {
+        self.view = view
+        self.model = model
+    }
+}

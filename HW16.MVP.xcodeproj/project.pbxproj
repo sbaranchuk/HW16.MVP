@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84642A0229FF0EFD0076850C /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84642A0129FF0EFD0076850C /* ModuleBuilder.swift */; };
 		8493330A29F6EF33009C3FF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493330929F6EF33009C3FF6 /* AppDelegate.swift */; };
 		8493330C29F6EF33009C3FF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493330B29F6EF33009C3FF6 /* SceneDelegate.swift */; };
 		8493330E29F6EF33009C3FF6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493330D29F6EF33009C3FF6 /* MainViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84642A0129FF0EFD0076850C /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		8493330629F6EF33009C3FF6 /* HW16.MVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW16.MVP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8493330929F6EF33009C3FF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8493330B29F6EF33009C3FF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84642A0029FF0EA80076850C /* ModuleBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				84642A0129FF0EFD0076850C /* ModuleBuilder.swift */,
+			);
+			path = ModuleBuilder;
+			sourceTree = "<group>";
+		};
 		849332FD29F6EF33009C3FF6 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +98,7 @@
 		8493331F29F6F2B5009C3FF6 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				84642A0029FF0EA80076850C /* ModuleBuilder */,
 				8493331D29F6F1E0009C3FF6 /* App */,
 				8493331E29F6F1FF009C3FF6 /* MainModule */,
 			);
@@ -207,6 +218,7 @@
 				8493330E29F6EF33009C3FF6 /* MainViewController.swift in Sources */,
 				8493332829F6F69A009C3FF6 /* Animals.swift in Sources */,
 				8493330A29F6EF33009C3FF6 /* AppDelegate.swift in Sources */,
+				84642A0229FF0EFD0076850C /* ModuleBuilder.swift in Sources */,
 				8493330C29F6EF33009C3FF6 /* SceneDelegate.swift in Sources */,
 				8493332C29F7008C009C3FF6 /* Animal.swift in Sources */,
 			);

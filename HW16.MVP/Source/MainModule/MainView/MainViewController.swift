@@ -10,9 +10,15 @@ import SnapKit
 
 class MainViewController: UIViewController {
 
+    // MARK: - Properties
+
+    var presenter: MainPresenterProtocol?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
     }
 }
 
+extension MainViewController: MainViewProtocol {
+}

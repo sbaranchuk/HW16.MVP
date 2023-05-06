@@ -11,13 +11,14 @@ protocol MainViewProtocol: AnyObject {
 }
 
 protocol MainPresenterProtocol: AnyObject {
+    var view: MainViewProtocol { get set }
+    var model: Animals { get }
     init(view: MainViewProtocol, model: Animals)
 }
 
 class MainPresenter: MainPresenterProtocol {
-
-    let view: MainViewProtocol
-    let model: Animals
+    var view: MainViewProtocol
+    var model: Animals
 
     required init(view: MainViewProtocol, model: Animals) {
         self.view = view

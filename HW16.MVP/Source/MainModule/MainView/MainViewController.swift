@@ -8,11 +8,11 @@
 import UIKit
 import SnapKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, MainViewProtocol {
     
     // MARK: - Properties
     
-    weak var presenter: MainPresenterProtocol?
+    var presenter: MainPresenterProtocol?
     
     // MARK: - UIElemenst
     
@@ -108,9 +108,6 @@ class MainViewController: UIViewController {
 
 // MARK: - Extensions
 
-extension MainViewController: MainViewProtocol {
-}
-
 extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter?.model.animals[section].count ?? 0
@@ -138,4 +135,14 @@ extension MainViewController: UICollectionViewDataSource {
 }
 
 extension MainViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 1:
+            let animal = presenter?.model.animals[indexPath.section][indexPath.row] ?? Animal(image: "dog-image", name: "Dog")
+            let detailViewController = ModuleBuilder.createDetailModule(animal: animal)
+            navigationController?.pushViewController(detailViewController, animated: true)
+        default:
+            break
+        }
+    }
 }

@@ -10,6 +10,8 @@
 		845AFB9A2A0657F6000EACEF /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845AFB992A0657F6000EACEF /* CategoryCell.swift */; };
 		845AFB9C2A065806000EACEF /* PetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845AFB9B2A065806000EACEF /* PetCell.swift */; };
 		84642A0229FF0EFD0076850C /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84642A0129FF0EFD0076850C /* ModuleBuilder.swift */; };
+		8489C71C2A07C5F000662DDD /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489C71B2A07C5F000662DDD /* DetailPresenter.swift */; };
+		8489C71E2A07C60700662DDD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489C71D2A07C60700662DDD /* DetailViewController.swift */; };
 		8493330A29F6EF33009C3FF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493330929F6EF33009C3FF6 /* AppDelegate.swift */; };
 		8493330C29F6EF33009C3FF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493330B29F6EF33009C3FF6 /* SceneDelegate.swift */; };
 		8493330E29F6EF33009C3FF6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493330D29F6EF33009C3FF6 /* MainViewController.swift */; };
@@ -24,6 +26,8 @@
 		845AFB992A0657F6000EACEF /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		845AFB9B2A065806000EACEF /* PetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCell.swift; sourceTree = "<group>"; };
 		84642A0129FF0EFD0076850C /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		8489C71B2A07C5F000662DDD /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		8489C71D2A07C60700662DDD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8493330629F6EF33009C3FF6 /* HW16.MVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW16.MVP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8493330929F6EF33009C3FF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8493330B29F6EF33009C3FF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +66,31 @@
 				84642A0129FF0EFD0076850C /* ModuleBuilder.swift */,
 			);
 			path = ModuleBuilder;
+			sourceTree = "<group>";
+		};
+		8489C7172A07C57200662DDD /* DetailModule */ = {
+			isa = PBXGroup;
+			children = (
+				8489C7182A07C59700662DDD /* DetailPresenter */,
+				8489C71A2A07C5C900662DDD /* DetailView */,
+			);
+			path = DetailModule;
+			sourceTree = "<group>";
+		};
+		8489C7182A07C59700662DDD /* DetailPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				8489C71B2A07C5F000662DDD /* DetailPresenter.swift */,
+			);
+			path = DetailPresenter;
+			sourceTree = "<group>";
+		};
+		8489C71A2A07C5C900662DDD /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				8489C71D2A07C60700662DDD /* DetailViewController.swift */,
+			);
+			path = DetailView;
 			sourceTree = "<group>";
 		};
 		849332FD29F6EF33009C3FF6 = {
@@ -115,6 +144,7 @@
 				84642A0029FF0EA80076850C /* ModuleBuilder */,
 				8493331D29F6F1E0009C3FF6 /* App */,
 				8493331E29F6F1FF009C3FF6 /* MainModule */,
+				8489C7172A07C57200662DDD /* DetailModule */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -228,9 +258,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8489C71E2A07C60700662DDD /* DetailViewController.swift in Sources */,
 				8493332A29F6F6B1009C3FF6 /* MainPresenter.swift in Sources */,
 				8493330E29F6EF33009C3FF6 /* MainViewController.swift in Sources */,
 				8493332829F6F69A009C3FF6 /* Animals.swift in Sources */,
+				8489C71C2A07C5F000662DDD /* DetailPresenter.swift in Sources */,
 				845AFB9A2A0657F6000EACEF /* CategoryCell.swift in Sources */,
 				8493330A29F6EF33009C3FF6 /* AppDelegate.swift in Sources */,
 				84642A0229FF0EFD0076850C /* ModuleBuilder.swift in Sources */,

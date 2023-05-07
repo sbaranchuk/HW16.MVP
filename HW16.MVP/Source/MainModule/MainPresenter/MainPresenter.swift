@@ -8,16 +8,17 @@
 import Foundation
 
 protocol MainViewProtocol: AnyObject {
+    var presenter: MainPresenterProtocol? { get set }
 }
 
 protocol MainPresenterProtocol: AnyObject {
-    var view: MainViewProtocol { get set }
+    var view: MainViewProtocol? { get set }
     var model: Animals { get }
     init(view: MainViewProtocol, model: Animals)
 }
 
 class MainPresenter: MainPresenterProtocol {
-    var view: MainViewProtocol
+    weak var view: MainViewProtocol?
     var model: Animals
 
     required init(view: MainViewProtocol, model: Animals) {

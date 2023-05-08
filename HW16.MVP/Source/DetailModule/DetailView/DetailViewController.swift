@@ -265,6 +265,5 @@ class DetailViewController: UIViewController, DetailViewProtocol {
         } else {
             navigationItem.rightBarButtonItem?.tintColor = .white
         }
-
     }
 }

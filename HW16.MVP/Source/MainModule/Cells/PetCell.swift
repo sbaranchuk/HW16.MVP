@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PetCell: UICollectionViewCell {
+final class PetCell: UICollectionViewCell {
 
     static var identifier = "PetCell"
 
@@ -115,64 +115,64 @@ class PetCell: UICollectionViewCell {
     }
 
     private func setupLayout() {
-        viewContainer.snp.makeConstraints { make in
-            make.top.equalTo(self).offset(15)
-            make.leading.equalTo(self)
-            make.height.equalTo(142)
-            make.trailing.equalTo(self)
+        viewContainer.snp.makeConstraints {
+            $0.top.equalTo(self).offset(15)
+            $0.leading.equalTo(self)
+            $0.height.equalTo(142)
+            $0.trailing.equalTo(self)
         }
 
-        imageView.snp.makeConstraints { make in
-            make.leading.equalTo(viewContainer.snp.leading)
-            make.top.equalTo(viewContainer.snp.top)
-            make.height.width.equalTo(142)
+        imageView.snp.makeConstraints {
+            $0.leading.equalTo(viewContainer.snp.leading)
+            $0.top.equalTo(viewContainer.snp.top)
+            $0.height.width.equalTo(142)
         }
 
-        favoritesButton.snp.makeConstraints { make in
-            make.height.width.equalTo(50)
-            make.trailing.equalTo(viewContainer.snp.trailing)
-            make.top.equalTo(viewContainer.snp.top)
+        favoritesButton.snp.makeConstraints {
+            $0.height.width.equalTo(50)
+            $0.trailing.equalTo(viewContainer.snp.trailing)
+            $0.top.equalTo(viewContainer.snp.top)
         }
 
-        titleLable.snp.makeConstraints { make in
-            make.top.equalTo(viewContainer.snp.top).offset(20)
-            make.leading.equalTo(imageView.snp.trailing).offset(10)
+        titleLable.snp.makeConstraints {
+            $0.top.equalTo(viewContainer.snp.top).offset(20)
+            $0.leading.equalTo(imageView.snp.trailing).offset(10)
         }
 
-        descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLable.snp.bottom).offset(8)
-            make.leading.equalTo(imageView.snp.trailing).offset(10)
-            make.trailing.equalTo(viewContainer.snp.trailing).offset(-20)
+        descriptionLabel.snp.makeConstraints {
+            $0.top.equalTo(titleLable.snp.bottom).offset(8)
+            $0.leading.equalTo(imageView.snp.trailing).offset(10)
+            $0.trailing.equalTo(viewContainer.snp.trailing).offset(-20)
         }
 
-        priceLabel.snp.makeConstraints { make in
-            make.bottom.equalTo(viewContainer.snp.bottom).offset(-10)
-            make.leading.equalTo(imageView.snp.trailing).offset(10)
+        priceLabel.snp.makeConstraints {
+            $0.bottom.equalTo(viewContainer.snp.bottom).offset(-10)
+            $0.leading.equalTo(imageView.snp.trailing).offset(10)
         }
 
-        iconCart.snp.makeConstraints { make in
-            make.centerY.equalTo(priceLabel.snp.centerY)
-            make.trailing.equalTo(viewContainer.snp.trailing).offset(-65)
-            make.width.height.equalTo(20)
+        iconCart.snp.makeConstraints {
+            $0.centerY.equalTo(priceLabel.snp.centerY)
+            $0.trailing.equalTo(viewContainer.snp.trailing).offset(-65)
+            $0.width.height.equalTo(20)
         }
 
-        buttonAdd.snp.makeConstraints { make in
-            make.centerY.equalTo(iconCart.snp.centerY)
-            make.leading.equalTo(iconCart.snp.trailing).offset(10)
+        buttonAdd.snp.makeConstraints {
+            $0.centerY.equalTo(iconCart.snp.centerY)
+            $0.leading.equalTo(iconCart.snp.trailing).offset(10)
         }
 
-        iconHeart.snp.makeConstraints { make in
-            make.centerX.equalTo(favoritesButton.snp.centerX)
-            make.centerY.equalTo(favoritesButton.snp.centerY)
-            make.height.equalTo(27)
-            make.width.equalTo(30)
+        iconHeart.snp.makeConstraints {
+            $0.centerX.equalTo(favoritesButton.snp.centerX)
+            $0.centerY.equalTo(favoritesButton.snp.centerY)
+            $0.height.equalTo(27)
+            $0.width.equalTo(30)
         }
 
-        iconReting.snp.makeConstraints { make in
-            make.leading.equalTo(imageView.snp.trailing).offset(10)
-            make.top.equalTo(descriptionLabel.snp.bottom).offset(8)
-            make.height.equalTo(12)
-            make.width.equalTo(48)
+        iconReting.snp.makeConstraints {
+            $0.leading.equalTo(imageView.snp.trailing).offset(10)
+            $0.top.equalTo(descriptionLabel.snp.bottom).offset(8)
+            $0.height.equalTo(12)
+            $0.width.equalTo(48)
         }
     }
 

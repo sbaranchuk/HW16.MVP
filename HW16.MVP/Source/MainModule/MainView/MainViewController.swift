@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SnapKit
 
 class MainViewController: UIViewController, MainViewProtocol {
     
@@ -45,11 +44,11 @@ class MainViewController: UIViewController, MainViewProtocol {
     }
     
     private func setupLayout() {
-        collectionView.snp.makeConstraints { make in
-            make.top.equalTo(view.snp.top)
-            make.leading.equalTo(view.snp.leading)
-            make.trailing.equalTo(view.snp.trailing)
-            make.bottom.equalTo(view.snp.bottom)
+        collectionView.snp.makeConstraints {
+            $0.top.equalTo(view.snp.top)
+            $0.leading.equalTo(view.snp.leading)
+            $0.trailing.equalTo(view.snp.trailing)
+            $0.bottom.equalTo(view.snp.bottom)
         }
     }
     

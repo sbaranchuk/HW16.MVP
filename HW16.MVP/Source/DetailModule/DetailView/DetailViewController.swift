@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SnapKit
 
 class DetailViewController: UIViewController, DetailViewProtocol {
 
@@ -24,7 +23,7 @@ class DetailViewController: UIViewController, DetailViewProtocol {
         return imageView
     }()
 
-    private lazy var viewContatiner: UIView = {
+    private lazy var viewContainer: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.layer.cornerRadius = 40
@@ -85,42 +84,25 @@ class DetailViewController: UIViewController, DetailViewProtocol {
 
     private lazy var labelPriceData: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
-        label.backgroundColor = .white
-        label.layer.masksToBounds = true
-        label.layer.cornerRadius = 15
-        label.font = .systemFont(ofSize: 14, weight: .semibold)
+        label.setPreferences()
         return label
     }()
 
     private lazy var labelAgeData: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
-        label.backgroundColor = .white
-        label.layer.masksToBounds = true
-        label.layer.cornerRadius = 15
-        label.font = .systemFont(ofSize: 14, weight: .semibold)
+        label.setPreferences()
         return label
     }()
 
     private lazy var labelSexData: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
-        label.backgroundColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.layer.masksToBounds = true
-        label.layer.cornerRadius = 15
-        label.font = .systemFont(ofSize: 14, weight: .semibold)
+        label.setPreferences()
         return label
     }()
 
     private lazy var labelColorData: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
-        label.backgroundColor = .white
-        label.layer.masksToBounds = true
-        label.layer.cornerRadius = 15
-        label.font = .systemFont(ofSize: 14, weight: .semibold)
+        label.setPreferences()
         return label
     }()
 
@@ -150,7 +132,7 @@ class DetailViewController: UIViewController, DetailViewProtocol {
     private func setupView() {
         view.backgroundColor = .systemGray6
 
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "arrow"), style: .done, target: self, action: #selector(popView))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Arrow"), style: .done, target: self, action: #selector(popView))
         navigationItem.leftBarButtonItem?.tintColor = .white
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "heart"), style: .done, target: self, action: #selector(addToFavorites))
@@ -159,86 +141,87 @@ class DetailViewController: UIViewController, DetailViewProtocol {
 
     private func setupHierarhy() {
         view.addSubview(imageView)
-        view.addSubview(viewContatiner)
-        viewContatiner.addSubview(titleLabel)
-        viewContatiner.addSubview(descriptionLabel)
-        viewContatiner.addSubview(stackInformationTitle)
-        stackInformationTitle.addArrangedSubview(labelPrice)
-        stackInformationTitle.addArrangedSubview(labelAge)
-        stackInformationTitle.addArrangedSubview(labelSex)
-        stackInformationTitle.addArrangedSubview(labelColor)
-        viewContatiner.addSubview(labelPriceData)
-        viewContatiner.addSubview(labelSexData)
-        viewContatiner.addSubview(labelColorData)
-        viewContatiner.addSubview(labelAgeData)
-        viewContatiner.addSubview(iconStars)
+        view.addSubview(viewContainer)
+        viewContainer.addSubview(titleLabel)
+        viewContainer.addSubview(descriptionLabel)
+        viewContainer.addSubview(stackInformationTitle)
+
+        let labelsForStack = [labelPrice, labelAge, labelSex, labelColor]
+        labelsForStack.forEach() {
+            stackInformationTitle.addArrangedSubview($0)
+        }
+
+        let labelsForViewCotainer = [labelPriceData, labelSexData, labelColorData, labelAgeData, iconStars]
+        labelsForViewCotainer.forEach() {
+            viewContainer.addSubview($0)
+        }
     }
 
     private func setupLayout() {
-        imageView.snp.makeConstraints { make in
-            make.top.equalTo(view.snp.top)
-            make.leading.equalTo(view.snp.leading)
-            make.trailing.equalTo(view.snp.trailing)
-            make.height.equalTo(480)
+        imageView.snp.makeConstraints {
+            $0.top.equalTo(view.snp.top)
+            $0.leading.equalTo(view.snp.leading)
+            $0.trailing.equalTo(view.snp.trailing)
+            $0.height.equalTo(480)
         }
 
-        viewContatiner.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(40)
-            make.leading.equalTo(view.snp.leading).offset(20)
-            make.trailing.equalTo(view.snp.trailing).offset(-20)
-            make.height.equalTo(150)
+        viewContainer.snp.makeConstraints {
+            $0.top.equalTo(imageView.snp.bottom).offset(40)
+            $0.leading.equalTo(view.snp.leading).offset(20)
+            $0.trailing.equalTo(view.snp.trailing).offset(-20)
+            $0.height.equalTo(150)
         }
 
-        titleLabel.snp.makeConstraints { make in
-            make.leading.equalTo(imageView.snp.leading).offset(50)
-            make.top.equalTo(viewContatiner.snp.top).offset(30)
+        titleLabel.snp.makeConstraints {
+            $0.leading.equalTo(imageView.snp.leading).offset(50)
+            $0.top.equalTo(viewContainer.snp.top).offset(30)
         }
 
-        descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.top).offset(35)
-            make.leading.equalTo(titleLabel.snp.leading)
-            make.trailing.equalTo(viewContatiner.snp.trailing).offset(-20)
+        descriptionLabel.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.top).offset(35)
+            $0.leading.equalTo(titleLabel.snp.leading)
+            $0.trailing.equalTo(viewContainer.snp.trailing).offset(-20)
         }
 
-        stackInformationTitle.snp.makeConstraints { make in
-            make.leading.equalTo(view.snp.leading).offset(50)
-            make.trailing.equalTo(view.snp.trailing).offset(-50)
-            make.top.equalTo(viewContatiner.snp.bottom).offset(30)
+        stackInformationTitle.snp.makeConstraints {
+            $0.leading.equalTo(view.snp.leading).offset(50)
+            $0.trailing.equalTo(view.snp.trailing).offset(-50)
+            $0.top.equalTo(viewContainer.snp.bottom).offset(30)
         }
 
-        labelPriceData.snp.makeConstraints { make in
-            make.centerX.equalTo(labelPrice.snp.centerX)
-            make.top.equalTo(labelPrice.snp.bottom).offset(20)
-            make.width.equalTo(60)
-            make.height.equalTo(30)
+        labelPriceData.snp.makeConstraints {
+            $0.centerX.equalTo(labelPrice.snp.centerX)
+            $0.top.equalTo(labelPrice.snp.bottom).offset(20)
+            $0.width.equalTo(60)
+            $0.height.equalTo(30)
         }
 
-        labelAgeData.snp.makeConstraints { make in
-            make.centerX.equalTo(labelAge.snp.centerX)
-            make.top.equalTo(labelAge.snp.bottom).offset(20)
-            make.width.equalTo(60)
-            make.height.equalTo(30)
+        labelAgeData.snp.makeConstraints {
+            $0.centerX.equalTo(labelAge.snp.centerX)
+            $0.top.equalTo(labelAge.snp.bottom).offset(20)
+            $0.width.equalTo(60)
+            $0.height.equalTo(30)
         }
 
-        labelSexData.snp.makeConstraints { make in
-            make.centerX.equalTo(labelSex.snp.centerX)
-            make.top.equalTo(labelSex.snp.bottom).offset(20)
-            make.width.equalTo(60)
-            make.height.equalTo(30)
+        labelSexData.snp.makeConstraints {
+            $0.centerX.equalTo(labelSex.snp.centerX)
+            $0.top.equalTo(labelSex.snp.bottom).offset(20)
+            $0.width.equalTo(60)
+            $0.height.equalTo(30)
         }
 
-        labelColorData.snp.makeConstraints { make in
-            make.centerX.equalTo(labelColor.snp.centerX)
-            make.top.equalTo(labelColor.snp.bottom).offset(20)
-            make.width.equalTo(60)
-            make.height.equalTo(30)
+        labelColorData.snp.makeConstraints {
+            $0.centerX.equalTo(labelColor.snp.centerX)
+            $0.top.equalTo(labelColor.snp.bottom).offset(20)
+            $0.width.equalTo(60)
+            $0.height.equalTo(30)
         }
 
-        iconStars.snp.makeConstraints { make in
-            make.trailing.equalTo(viewContatiner.snp.trailing).offset(-60)
-            make.centerY.equalTo(titleLabel.snp.centerY)
-            make.width.equalTo(80)
-            make.height.equalTo(20)
+        iconStars.snp.makeConstraints {
+            $0.trailing.equalTo(viewContainer.snp.trailing).offset(-60)
+            $0.centerY.equalTo(titleLabel.snp.centerY)
+            $0.width.equalTo(80)
+            $0.height.equalTo(20)
         }
     }
 
@@ -265,5 +248,15 @@ class DetailViewController: UIViewController, DetailViewProtocol {
         } else {
             navigationItem.rightBarButtonItem?.tintColor = .white
         }
+    }
+}
+
+extension UILabel {
+    func setPreferences() {
+        self.textAlignment = .center
+        self.backgroundColor = .white
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = 15
+        self.font = .systemFont(ofSize: 14, weight: .semibold)
     }
 }

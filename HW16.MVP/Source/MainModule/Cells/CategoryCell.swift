@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CategoryCell: UICollectionViewCell {
+final class CategoryCell: UICollectionViewCell {
 
     static var identifier = "CategoryCell"
 
@@ -52,19 +52,19 @@ class CategoryCell: UICollectionViewCell {
     }
 
     private func setupLayout() {
-        viewContainer.snp.makeConstraints { make in
-            make.top.leading.equalTo(self)
-            make.height.width.equalTo(83)
+        viewContainer.snp.makeConstraints {
+            $0.top.leading.equalTo(self)
+            $0.height.width.equalTo(83)
         }
 
-        imageView.snp.makeConstraints { make in
-            make.centerX.equalTo(viewContainer.snp.centerX)
-            make.centerY.equalTo(viewContainer.snp.centerY)
+        imageView.snp.makeConstraints {
+            $0.centerX.equalTo(viewContainer.snp.centerX)
+            $0.centerY.equalTo(viewContainer.snp.centerY)
         }
 
-        titleLable.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(20)
-            make.centerX.equalTo(imageView.snp.centerX)
+        titleLable.snp.makeConstraints {
+            $0.top.equalTo(imageView.snp.bottom).offset(20)
+            $0.centerX.equalTo(imageView.snp.centerX)
         }
     }
 
